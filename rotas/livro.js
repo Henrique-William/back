@@ -10,6 +10,6 @@ router.post("/", postLivro);
 
 router.patch("/:id", patchLivro);
 
-router.delete("/", deleteLivro);
+router.delete("/:id", deleteLivro);
 
 module.exports = router;
