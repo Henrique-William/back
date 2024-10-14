@@ -18,5 +18,4 @@ public class Main {
         classificacao = (int) (media/2);
         System.out.println(classificacao);
     }
-
 }
