@@ -1,4 +1,4 @@
-package java.curso02.atividade01.src;
+package atividade01;
 
 public class Aluno {
     String nome;
