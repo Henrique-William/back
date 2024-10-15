@@ -34,7 +34,6 @@ public class JogoDaAdivinhacao {
             } else {
                 System.out.println("O número digitado é maior que o número gerado.");
             }
-
         }
 
         if (tentativas == 5 && numeroDigitado != numeroGerado) {
