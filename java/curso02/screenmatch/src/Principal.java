@@ -1,17 +1,21 @@
+import br.com.alura.screenmatch.modelos.Filme;
+
 public class Principal {
-    public static void main(String[] args){
-        Filme meuFilme = new Filme();
-        meuFilme.nome = "O Poderoso chefão";
-        meuFilme.anoDeLancamento = 1970;
-        meuFilme.duracaoEmMinutos = 180;
 
-        meuFilme.exibeFichaTecnica();
-        meuFilme.avalia(0);
-        meuFilme.avalia(5);
-        meuFilme.avalia(10);
+    public static void main(String[] args) {
+        Filme favorito = new Filme();
 
-        System.out.println(meuFilme.somaDasAvaliacoes);
-        System.out.println(meuFilme.totalAvaliacoes);
-        System.out.println(meuFilme.retornaMedia());
+        favorito.setNome("The Matrix");
+        favorito.setAnoDeLancamento(1999);
+        favorito.setDuracaoEmMinutos(135);
+        favorito.setIncluidoNoPlano(true);
+
+        favorito.exibeFichaTecnica();
+        favorito.avalia(9);
+        favorito.avalia(8);
+        favorito.avalia(9);
+
+        System.out.println("Média de avaliações do filme: " +favorito.pegaMedia());
     }
+
 }
