@@ -9,10 +9,7 @@ import screenmatch.modelos.Serie;
 public class Principal {
 
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-
-        meuFilme.setNome("The Matrix");
-        meuFilme.setAnoDeLancamento(1999);
+        Filme meuFilme = new Filme("The Matrix", 1999);
         meuFilme.setDuracaoEmMinutos(180);
         meuFilme.setIncluidoNoPlano(true);
         System.out.println("Duração do Filme: " + meuFilme.getDuracaoEmMinutos());
@@ -24,18 +21,13 @@ public class Principal {
 
         System.out.println("Média de avaliações do filme: " +meuFilme.pegaMedia());
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost", 2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(10);
         lost.setMinutosPorEpisodio(50);
 
-        Filme outroFilme = new Filme();
-
-        outroFilme.setNome("Avatar");
-        outroFilme.setAnoDeLancamento(2023);
+        Filme outroFilme = new Filme("Avatar", 2023);
         outroFilme.setDuracaoEmMinutos(200);
         outroFilme.setIncluidoNoPlano(true);
 
@@ -54,19 +46,16 @@ public class Principal {
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
 
-        Filme filmeDoPaulo = new Filme();
-        filmeDoPaulo.setNome("Dogville");
+        Filme filmeDoPaulo = new Filme("Dogville", 2003);
         filmeDoPaulo.setDuracaoEmMinutos(200);
-        filmeDoPaulo.setAnoDeLancamento(2003);
         filmeDoPaulo.avalia(10);
         //Array
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();
-        listaDeFilmes.add(filmeDoPaulo);
         listaDeFilmes.add(meuFilme);
         listaDeFilmes.add(outroFilme);
+        listaDeFilmes.add(filmeDoPaulo);
         System.out.println("Tamanho da lista: " + listaDeFilmes.size());
         System.out.println("Primeiro filme: " + listaDeFilmes.get(0).getNome());
         System.out.println(listaDeFilmes);
-        
     }
 }
