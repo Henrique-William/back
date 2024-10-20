@@ -4,7 +4,10 @@ import screenmatch.modelos.Filme;
 import screenmatch.modelos.Serie;
 import screenmatch.modelos.Titulo;
 
+import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -17,7 +20,7 @@ public class PrincipalComListas {
 
         Serie lost = new Serie("Lost", 2000);
 
-        ArrayList<Titulo> lista = new ArrayList<>();
+        List<Titulo> lista = new ArrayList<>();
         lista.add(meuFilme);
         lista.add(outroFilme);
         lista.add(filmeDoPaulo);
@@ -29,5 +32,23 @@ public class PrincipalComListas {
                 System.out.println("Classificação: " + filme.getClassificacao());
             }
         }
+
+        List<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Adam Sandler");
+        buscaPorArtista.add("Paulo");
+        buscaPorArtista.add("Jaqueline");
+        System.out.println(buscaPorArtista);
+
+        Collections.sort(buscaPorArtista);
+        System.out.println("Depois da ordenação: ");
+        System.out.println(buscaPorArtista);
+
+        Collections.sort(lista);
+        System.out.println("Lista de titulos, ordenada");
+        System.out.println(lista);
+
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por Ano: ");
+        System.out.println(lista);
     }
 }
