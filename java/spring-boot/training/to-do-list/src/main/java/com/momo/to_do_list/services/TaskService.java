@@ -30,7 +30,6 @@ public class TaskService {
         taskToUpdate.setDescription(task.getDescription());
         taskToUpdate.setIsFinalized(task.getIsFinalized());
         taskToUpdate.setPriority(task.getPriority());
-        taskToUpdate.setDueDate(task.getDueDate());
         return taskToUpdate;
     }
 

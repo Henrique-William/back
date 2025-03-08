@@ -10,13 +10,13 @@ public class Task {
     private int priority;
     private LocalDate dueDate;
 
-    public Task(Long id, String name, String description, boolean isFinalized, int priority, LocalDate dueDate) {
+    public Task(Long id, String name, String description, boolean isFinalized, int priority) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.isFinalized = isFinalized;
         this.priority = priority;
-        this.dueDate = dueDate;
+        this.dueDate = LocalDate.now();;
     }
 
     public Long getId() {
@@ -28,13 +28,14 @@ public class Task {
     public String getDescription() {
         return description;
     }
-    public boolean getIsFinalized() {
+    public boolean getFinalized() {
         return isFinalized;
     }
     public int getPriority() {
         return priority;
     }
     public LocalDate getDueDate() {
+        dueDate = LocalDate.now();
         return dueDate;
     }
 
@@ -47,9 +48,10 @@ public class Task {
     public void setDescription(String description) {
         this.description = description;
     }
-    public void setIsFinalized(boolean isFinalized) {
-        this.isFinalized = isFinalized;
+    public void setFinalized(boolean finalized) {
+        this.isFinalized = finalized;
     }
-    public void setPriority(int priority) { this.priority = priority; }
-    public void setDueDate(LocalDate dueDate) { this.dueDate = dueDate; }
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
 }
