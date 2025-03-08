@@ -43,7 +43,7 @@ public class TaskController {
         return new ResponseEntity<>(taskUpdated, HttpStatus.OK);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/task")
     public void deleteTask(@RequestParam Long id) {
         taskService.deleteTask(id);
     }

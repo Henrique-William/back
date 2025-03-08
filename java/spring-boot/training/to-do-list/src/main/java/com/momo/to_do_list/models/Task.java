@@ -1,6 +1,6 @@
 package com.momo.to_do_list.models;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Task {
     private Long id;
@@ -8,9 +8,9 @@ public class Task {
     private String description;
     private boolean isFinalized;
     private int priority;
-    private Date dueDate;
+    private LocalDate dueDate;
 
-    public Task(Long id, String name, String description, boolean isFinalized, int priority, Date dueDate) {
+    public Task(Long id, String name, String description, boolean isFinalized, int priority, LocalDate dueDate) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -28,13 +28,13 @@ public class Task {
     public String getDescription() {
         return description;
     }
-    public boolean getFinalized() {
+    public boolean getIsFinalized() {
         return isFinalized;
     }
     public int getPriority() {
         return priority;
     }
-    public Date getDueDate() {
+    public LocalDate getDueDate() {
         return dueDate;
     }
 
@@ -47,13 +47,9 @@ public class Task {
     public void setDescription(String description) {
         this.description = description;
     }
-    public void setFinalized(boolean finalized) {
-        this.isFinalized = finalized;
+    public void setIsFinalized(boolean isFinalized) {
+        this.isFinalized = isFinalized;
     }
-    public void setPriority(int priority) {
-        this.priority = priority;
-    }
-    public void setDueDate(Date dueDate) {
-        this.dueDate = dueDate;
-    }
+    public void setPriority(int priority) { this.priority = priority; }
+    public void setDueDate(LocalDate dueDate) { this.dueDate = dueDate; }
 }

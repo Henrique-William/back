@@ -12,9 +12,7 @@ public class TaskService {
     private final List<Task> tasks = new ArrayList<>();
     private final static AtomicLong  counter = new AtomicLong ();
 
-    public List<Task> getAllTasks() {
-        return tasks;
-    }
+    public List<Task> getAllTasks() { return tasks; }
 
     public Task addTask(Task task) {
         task.setId(counter.incrementAndGet());
@@ -30,7 +28,7 @@ public class TaskService {
         Task taskToUpdate = getTaskById(id);
         taskToUpdate.setName(task.getName());
         taskToUpdate.setDescription(task.getDescription());
-        taskToUpdate.setFinalized(task.getFinalized());
+        taskToUpdate.setIsFinalized(task.getIsFinalized());
         taskToUpdate.setPriority(task.getPriority());
         taskToUpdate.setDueDate(task.getDueDate());
         return taskToUpdate;
