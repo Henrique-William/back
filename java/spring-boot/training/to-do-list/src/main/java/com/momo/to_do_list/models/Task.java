@@ -28,7 +28,7 @@ public class Task {
     public String getDescription() {
         return description;
     }
-    public boolean getFinalized() {
+    public boolean getIsFinalized() {
         return isFinalized;
     }
     public int getPriority() {
@@ -48,7 +48,7 @@ public class Task {
     public void setDescription(String description) {
         this.description = description;
     }
-    public void setFinalized(boolean finalized) {
+    public void setIsFinalized(boolean finalized) {
         this.isFinalized = finalized;
     }
     public void setPriority(int priority) {
