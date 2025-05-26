@@ -36,7 +36,7 @@ public class UserService {
     public UserEntity updateUser(Long id, UserEntity userDetails) {
 
         UserEntity user = userRepository.findById(id).orElseThrow();
-        user.setNane(userDetails.getName());
+        user.setName(userDetails.getName());
         user.setEmail(userDetails.getEmail());
         if (userDetails.getPassword() !=null && !userDetails.getPassword().isBlank()) {
             user.setPassword(passwordEncoder.encode(userDetails.getPassword()));

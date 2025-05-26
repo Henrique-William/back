@@ -27,7 +27,7 @@ public class UserEntity {
     public String getName() {
         return name;
     }
-    public void setNane(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
