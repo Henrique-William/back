@@ -3,6 +3,7 @@ package com.study.user_registration.service;
 import com.study.user_registration.entity.UserEntity;
 import com.study.user_registration.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +15,9 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     public List<UserEntity> getAllUsers() {
         return userRepository.findAll();
     }
@@ -23,14 +27,20 @@ public class UserService {
     }
 
     public UserEntity createUser(UserEntity userEntity) {
+
+        userEntity.setPassword(passwordEncoder.encode(userEntity.getPassword()));
         return userRepository.save(userEntity);
+
     }
 
     public UserEntity updateUser(Long id, UserEntity userDetails) {
+
         UserEntity user = userRepository.findById(id).orElseThrow();
         user.setNane(userDetails.getName());
         user.setEmail(userDetails.getEmail());
-        user.setPassword(userDetails.getPassword());
+        if (userDetails.getPassword() !=null && !userDetails.getPassword().isBlank()) {
+            user.setPassword(passwordEncoder.encode(userDetails.getPassword()));
+        }
 
         return userRepository.save(user);
     }
