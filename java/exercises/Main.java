@@ -13,13 +13,14 @@ public class Main {
         FactorialNumber factorialNumber = new FactorialNumber();
         PalindromeChecker palindromeChecker = new PalindromeChecker();
         MinMaxOfAnArray minMaxOfAnArray = new MinMaxOfAnArray();
+
         String string = "Arara";
         List<Integer> array = new ArrayList<>(Arrays.asList(1231, 213, 12, 123, 3312, 4444, 3892));
 
-//        calculator.calculateAll();
-//        fibonacci.printFibonacci();
-//        factorialNumber.printFactorial();
-//        System.out.println(palindromeChecker.isPalindrome(string));
+        calculator.calculateAll();
+        fibonacci.printFibonacci();
+        factorialNumber.printFactorial();
+        System.out.println(palindromeChecker.isPalindrome(string));
 
         System.out.println(minMaxOfAnArray.MinAndMaxOfAnArray(array));
 
