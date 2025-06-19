@@ -53,5 +53,4 @@ public class Tweet {
     public void setCreationTimestamp(Instant creationTimestamp) {
         this.creationTimestamp = creationTimestamp;
     }
-
 }
