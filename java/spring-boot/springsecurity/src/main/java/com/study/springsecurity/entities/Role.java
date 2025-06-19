@@ -21,12 +21,12 @@ public class Role {
         this.roleId = roleId;
     }
 
-    public String getRoleName() {
+    public String getName() {
         return name;
     }
 
-    public void setRoleName(String roleName) {
-        this.name = roleName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public enum Values {
@@ -43,10 +43,7 @@ public class Role {
             return roleId;
         }
 
-        public void setRoleId(long roleId) {
-            this.roleId = roleId;
-        }
-
     }
+
 
 }
